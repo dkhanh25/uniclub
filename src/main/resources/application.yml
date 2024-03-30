@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:1337/uniclub_web
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+key:
+  token:
+    jwt: OqSYO3zpAWFWUCYZxbQQVHv4dQQ7BgAZWUlF3x9UrYk=
+
+upload:
+  file:
+    path: C:\Users\ASUS\eclipse-workspace\Uploads
