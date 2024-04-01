@@ -10,6 +10,22 @@ public class InsertProductRequest {
     @Setter
     private String productName;
 
+
+    @Setter
+    private int idTag;
+
+    @Setter
+    private int idCategory;
+
+    @Setter
+    private int idColor;
+
+    @Setter
+    private int idSize;
+
+    @Setter
+    private int soLuong;
+
     @Setter
     private double price;
 
