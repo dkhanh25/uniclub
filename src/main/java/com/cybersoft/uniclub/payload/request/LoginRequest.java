@@ -13,6 +13,7 @@ public class LoginRequest {
 
     @Getter
     @Setter
+    @NotBlank(message = "Vui long nhap password")
     private String password;
 
 }
