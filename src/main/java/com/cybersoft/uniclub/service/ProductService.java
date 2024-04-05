@@ -3,6 +3,7 @@ package com.cybersoft.uniclub.service;
 import com.cybersoft.uniclub.entity.ProductDetailEntity;
 import com.cybersoft.uniclub.entity.ProductEntity;
 import com.cybersoft.uniclub.entity.key.ProductDetailID;
+import com.cybersoft.uniclub.exception.InsertException;
 import com.cybersoft.uniclub.payload.request.InsertProductRequest;
 import com.cybersoft.uniclub.repository.ProductDetailRepository;
 import com.cybersoft.uniclub.repository.ProductRepository;
@@ -55,7 +56,7 @@ public class ProductService implements ProductServiceImp {
 
             isSuccess = true;
         } catch (Exception e) {
-            throw new RuntimeException("Loi " + e.getMessage());
+            throw new InsertException("Loi them du lieu: " + e.getMessage());
         }
 
         return isSuccess;
