@@ -29,6 +29,4 @@ public class ProductEntity {
     @Setter
     private String image;
 
-
-
 }

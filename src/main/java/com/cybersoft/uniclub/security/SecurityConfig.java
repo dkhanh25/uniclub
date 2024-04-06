@@ -4,7 +4,6 @@ import com.cybersoft.uniclub.filter.CustomJwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -39,7 +38,7 @@ public class SecurityConfig {
 //
 //         return http.build();
 
-        /** Cấu hình Security như bên dưới
+        /* Cấu hình Security như bên dưới
          *  GET /admin -> Ai truy cập cũng được
          *  POST /admin -> Chỉ user truy cập được
          *  PUT /admin -> Chỉ admin vô được
@@ -50,7 +49,7 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/login/**").permitAll()
+                .requestMatchers("/login/**","/file/**").permitAll()
 //                .requestMatchers(HttpMethod.POST,"/admin").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()

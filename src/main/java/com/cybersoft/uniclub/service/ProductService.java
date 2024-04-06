@@ -33,7 +33,6 @@ public class ProductService implements ProductServiceImp {
 
         try {
 
-
             ProductEntity productEntity = new ProductEntity();
             productEntity.setProductName(productRequest.getProductName());
             productEntity.setPrice(productRequest.getPrice());
