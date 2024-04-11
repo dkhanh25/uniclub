@@ -10,7 +10,6 @@ public class InsertProductRequest {
     @Setter
     private String productName;
 
-
     @Setter
     private int idTag;
 

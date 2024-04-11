@@ -25,6 +25,7 @@ public class ProductService implements ProductServiceImp {
     @Autowired
     private ProductDetailRepository productDetailRepository;
 
+
     @Transactional
     @Override
     public boolean insertProduct(InsertProductRequest productRequest) {
@@ -32,18 +33,20 @@ public class ProductService implements ProductServiceImp {
         fileServiceImp.saveFile(productRequest.getFile());
 
         try {
-
-
             ProductEntity productEntity = new ProductEntity();
             productEntity.setProductName(productRequest.getProductName());
             productEntity.setPrice(productRequest.getPrice());
             productEntity.setImage(productRequest.getFile().getOriginalFilename());
+            if (checkProductName(productRequest.getProductName()))
+                throw new RuntimeException("Loi them du lieu, trung ten san pham");
 
             productRepository.save(productEntity);
 
+            ProductEntity productFind = productRepository.findByProductName(productEntity.getProductName());
             ProductDetailEntity productDetailEntity = new ProductDetailEntity();
             ProductDetailID productDetailID = new ProductDetailID();
-            productDetailID.setIdProduct(productEntity.getIdProduct());
+            System.out.println("Kiem tra: " + productFind.getIdProduct());
+            productDetailID.setIdProduct(productFind.getIdProduct());
             productDetailID.setIdCategory(productRequest.getIdCategory());
             productDetailID.setIdColor(productRequest.getIdColor());
             productDetailID.setIdTag(productRequest.getIdTag());
@@ -61,4 +64,11 @@ public class ProductService implements ProductServiceImp {
 
         return isSuccess;
     }
+
+    @Override
+    public boolean checkProductName(String productName) {
+        return productRepository.findByProductName(productName) == null;
+    }
+
+
 }
