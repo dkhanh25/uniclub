@@ -7,6 +7,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 key:
   token:
     jwt: OqSYO3zpAWFWUCYZxbQQVHv4dQQ7BgAZWUlF3x9UrYk=
