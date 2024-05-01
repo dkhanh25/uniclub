@@ -29,7 +29,7 @@ public class InsertProductRequest {
     private double price;
 
     @Setter
-    private MultipartFile file;
+    private transient MultipartFile file;
 
 
 }

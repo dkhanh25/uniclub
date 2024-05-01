@@ -19,3 +19,9 @@ key:
 upload:
   file:
     path: C:\Users\ASUS\eclipse-workspace\Uploads
+
+logging:
+  level:
+    root: info
+  file:
+    name: C:\Users\ASUS\eclipse-workspace\log\devlog.log
