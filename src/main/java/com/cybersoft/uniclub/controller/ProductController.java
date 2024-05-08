@@ -18,8 +18,8 @@ public class ProductController {
     @Autowired
     private ProductServiceImp productServiceImp;
 
-    private Logger logger = LoggerFactory.getLogger(ProductController.class);
-    private Gson gson = new Gson();
+    private final Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private final Gson gson = new Gson();
 
     @PostMapping
     public ResponseEntity<?> insertProduct(InsertProductRequest productRequest) {
