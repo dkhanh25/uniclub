@@ -33,7 +33,6 @@ public class CustomJwtFilter extends OncePerRequestFilter {
 
         if(headerAuthen != null && headerAuthen.trim().length() > 0){
             String token = headerAuthen.substring(7);
-            //Giải mã token
             String data = jwtUltils.decryptToken(token);
             if(data != null){
                 RoleResponse role = gson.fromJson(data, RoleResponse.class);
