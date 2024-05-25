@@ -1,15 +1,17 @@
-package com.cybersoft.uniclub.exception;
-
-import lombok.Getter;
-import lombok.Setter;
+package com.CyberSoft.uniclub.exception;
 
 public class InsertException extends RuntimeException{
-
-    @Getter
-    @Setter
     private String message;
+    public InsertException(String message){
+        this.message = message;
+    }
 
-    public InsertException(String message) {
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
         this.message = message;
     }
 }
