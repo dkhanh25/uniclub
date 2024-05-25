@@ -1,4 +1,4 @@
-package com.CyberSoft.uniclubWeb.payload.request;
+package com.CyberSoft.uniclub.payload.request;
 
 public class LoginRequest {
 
