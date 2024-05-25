@@ -1,19 +1,22 @@
-package com.cybersoft.uniclub.payload.request;
-
-import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
+package com.CyberSoft.uniclubWeb.payload.request;
 
 public class LoginRequest {
 
-    @Getter
-    @Setter
-    @NotBlank(message = "Username khong duoc phep rong")
     private String username;
-
-    @Getter
-    @Setter
-    @NotBlank(message = "Vui long nhap password")
     private String password;
+    public String getUsername(){
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return password;
+    }
 }
