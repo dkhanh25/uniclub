@@ -1,35 +1,82 @@
-package com.cybersoft.uniclub.payload.request;
+package com.CyberSoft.uniclubWeb.payload.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
-@Getter
 public class InsertProductRequest {
-
-    @Setter
+    private transient MultipartFile file;       // transien: de bo gson
     private String productName;
+    private String price;
 
-    @Setter
     private int idTag;
-
-    @Setter
     private int idCategory;
-
-    @Setter
     private int idColor;
-
-    @Setter
     private int idSize;
-
-    @Setter
     private int soLuong;
 
-    @Setter
-    private double price;
+    public int getIdTag() {
+        return idTag;
+    }
 
-    @Setter
-    private transient MultipartFile file;
+    public void setIdTag(int idTag) {
+        this.idTag = idTag;
+    }
 
+    public int getIdCategory() {
+        return idCategory;
+    }
 
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
+    }
+
+    public int getIdColor() {
+        return idColor;
+    }
+
+    public void setIdColor(int idColor) {
+        this.idColor = idColor;
+    }
+
+    public int getIdSize() {
+        return idSize;
+    }
+
+    public void setIdSize(int idSize) {
+        this.idSize = idSize;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public MultipartFile getFile(){
+        return file;
+    }
+    public void setFile(MultipartFile file){
+        this.file = file;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 }
